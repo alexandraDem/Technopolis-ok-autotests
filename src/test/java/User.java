@@ -10,4 +10,8 @@ public class User {
         this.login = newLogin;
         this.password = newPassword;
     }
+
+    public String GetFullName(){
+        return name + " " + lastName;
+    }
 }

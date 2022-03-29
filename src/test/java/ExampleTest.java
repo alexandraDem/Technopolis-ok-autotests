@@ -1,9 +1,6 @@
+import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
-import java.util.Scanner;
-
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class ExampleTest {
@@ -23,6 +20,6 @@ public class ExampleTest {
         LoginPage loginPage = new LoginPage();
         MainPage mainPage = loginPage.login(loginUser);
 
-
+        mainPage.LoginIsCorrect(loginUser.GetFullName());
     }
 }
