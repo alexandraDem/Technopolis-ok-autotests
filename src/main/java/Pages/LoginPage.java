@@ -1,7 +1,12 @@
+package Pages;
+
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 
+import Users.User;
+
 import static com.codeborne.selenide.Selenide.$;
+
 
 public class LoginPage {
 

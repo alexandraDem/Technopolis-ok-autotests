@@ -1,9 +1,13 @@
-import com.codeborne.selenide.Condition;
+import Pages.LoginPage;
+import Pages.MainPage;
+import Users.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class ExampleTest {
+
+public class LoginTest {
 
     String targetUrl = "https://ok.ru/";
 
@@ -14,12 +18,19 @@ public class ExampleTest {
 
     @Test
     void LoginTest(){
-        User loginUser = new User(userName, userLastName, userLogin, userPassword);
+        User loginUser = new User.UserBuilder()
+                .withLogin(userLogin)
+                .withPassword(userPassword)
+                .withName(userName)
+                .withLastName(userLastName)
+                .build();
         open(targetUrl);
 
         LoginPage loginPage = new LoginPage();
         MainPage mainPage = loginPage.login(loginUser);
 
-        mainPage.LoginIsCorrect(loginUser.GetFullName());
+
+        Assertions.assertEquals(loginUser.GetFullName(), mainPage.GetUserName());
+
     }
 }

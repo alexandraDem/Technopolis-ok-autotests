@@ -1,4 +1,5 @@
-import com.codeborne.selenide.Condition;
+package Pages;
+
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
@@ -14,6 +15,10 @@ public class MainPage {
         //</svg>Alexandra Demianko</div>
         this.userNameField =  $(By.xpath("//div[contains(@class, 'tico ellip')]"));
 
+    }
+
+    public String GetUserName(){
+        return  this.userNameField.getText();
     }
 
     public boolean LoginIsCorrect(String requiredName){
