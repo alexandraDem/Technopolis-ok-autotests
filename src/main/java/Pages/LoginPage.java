@@ -7,7 +7,6 @@ import Users.User;
 
 import static com.codeborne.selenide.Selenide.$;
 
-
 public class LoginPage {
 
     public MainPage login(@NotNull User user){
