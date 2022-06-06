@@ -1,3 +1,5 @@
+package tests;
+
 import Pages.LoginPage;
 import Pages.MainPage;
 import Users.User;
